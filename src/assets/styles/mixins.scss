@@ -1,0 +1,60 @@
+@use 'sass:math';
+@mixin flexbox(){display: flex;display:-webkit-flex;display: -moz-flex;display: -o-flex;font-size: 0;}
+@mixin objf($size){object-fit: $size;-webkit-object-fit: $size;-moz-object-fit: $size;-o-object-fit: $size;}
+@mixin objp($pos){object-position: $pos;-webkit-object-position: $pos;-moz-object-position: $pos;-o-object-position: $pos;}
+@mixin anim($name,$time,$scenariy,$howmany,$delay) {animation: $name $time $scenariy $howmany $delay;-webkit-animation: $name $time $scenariy $howmany $delay;-moz-animation: $name $time $scenariy $howmany $delay;-o-animation: $name $time $scenariy $howmany $delay}
+@mixin rotate($deg){transform: rotate($deg);-webkit-transform: rotate($deg);-moz-transform: rotate($deg);-o-transform: rotate($deg);}
+@mixin translate($degX, $degY) {transform: translate($degX, $degY);-webkit-transform: translate($degX, $degY);-moz-transform: translate($degX, $degY);-o-transform: translate($degX, $degY);}
+@mixin scale($num){transform: scale($num);-webkit-transform: scale($num);-moz-transform: scale($num);-o-transform: scale($num);}
+@mixin flexboxinline() {display: inline-flex;display:-webkit-inline-flex;display: -moz-inline-flex;display: -o-inline-flex;}
+@mixin transition($all, $time, $scenariy, $delay) {transition: $all $time $scenariy $delay;-webkit-transition: $all $time $scenariy $delay;-moz-transition: $all $time $scenariy $delay;-o-transition: $all $time $scenariy $delay;}
+@mixin box-shadow($shadow) {-webkit-box-shadow: $shadow;-moz-box-shadow: $shadow;box-shadow: $shadow;}
+@mixin border-radius($radius) {-webkit-border-radius: $radius;-moz-border-radius: $radius;border-radius: $radius;}
+//----------------------------------------------------------------------------------------
+//Adaptive value
+$maxWidth: 1600;/* --- Here we are write enter layout width {ALL} without PX --- */
+$maxWidthContainer: 960;/* --- Here we are enter container width without PX --- */
+$fz: 16; /* --- Here we are enter general font size value on the website without PX ---   */
+@mixin adaptiv-value($property, $starSize, $minSize, $type) {
+	$addSize: $starSize - $minSize;
+	@if $type==1 {
+		//If less than the container
+		#{$property}: $starSize + px;
+		@media (max-width: calc($maxWidthContainer / $fz) + em) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+		}
+	} @else if $type==2 {
+		//If bigger than the container
+		#{$property}: $starSize + px;
+		@media (min-width: calc($maxWidthContainer / $fz) + em) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));			
+		}
+	} @else {
+		//Everytime
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));			
+	}
+}
+//----------------------------------------------------------------------------------------
+// TO%
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+//REM
+@function rem($px) {
+    $result: math.div($px, $fz) + rem;
+    @return $result;
+}
+//EM
+@function em($px) {
+    $result: math.div($px, $fz) + em;
+    @return $result;
+}
+//GLOBAL STYLES, CLASSES
+[class*="__container"] {
+	/*  -- CONTAINER WIDTH  -- */
+	max-width: rem(1000);
+	margin: 0 auto;
+	@include adaptiv-value(padding-right, 20, 15, 1);
+	@include adaptiv-value(padding-left, 20, 15, 1);
+}
