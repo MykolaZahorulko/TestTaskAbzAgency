@@ -1,0 +1,25 @@
+{
+  "name": "skill-abz-utils",
+  "description": "Test Task For Abz Agency Company",
+  "author": {
+    "name": "Mykola Zahorulko",
+    "email": "mykolazahorulko.work@gmail.com"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  },
+  "homepage": ""
+}
+
