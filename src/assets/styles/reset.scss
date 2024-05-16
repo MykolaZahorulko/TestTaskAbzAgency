@@ -1,9 +1,12 @@
+//Fonts connection
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+//Reset styles
 *{padding: 0;margin: 0;border: 0;}
 *,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
 :focus,:active{outline: none;}
 a:focus,a:active{outline: none;}
 nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1.5;font-size:16px;font-family: "HelveticaNeue";color: #000;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+html,body{height:100%;width:100%;font-size:100%;line-height:26px;font-size:16px;font-family: "Nunito";color: #000;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 input,button,textarea{font-family:inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
@@ -14,4 +17,71 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 a{ color: inherit;}
+//GLOBAL STYLES, CLASSES, VARIABLES
+$primary-yellow: #F4E041;
+$secondary-blue: #00BDD3;
+$background-color: #F8F8F8;
+body { &._lock { overflow: hidden; } background-color: $background-color; }
+.wrapper { min-height: 100vh; width: 100%;display: flex;flex-direction: column; }
+main { flex: 1 1 auto; }
+.img { position: relative; width: 20px; height: 20px; img, svg { position: absolute; top: 0; left: 0; max-width: 100%; width: 100%; height: 100%; object-fit: cover; } }
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  img {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  font-size: rem(40);
+  line-height: rem(40);
+}
+
+.common-button {
+  background-color: #F1E160;
+  min-width: rem(100);
+  min-height: rem(34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include border-radius(rem(80));
+  font-size: rem(16);
+  @include transition(all, 0.3s, ease, 0s);
+
+  @media (hover:hover) {
+    &:hover {
+      background-color: $primary-yellow;
+    }
+
+  }
+  @media (hover:none) {
+    &:active {
+      background-color: $primary-yellow;
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    background-color: #B4B4B4;
+    color: #ffffff;
+  }
+}
+[class*="__container"] {
+  /*  -- CONTAINER WIDTH  -- */
+  max-width: rem(1024);
+  margin: 0 auto;
+  @include adaptiv-value(padding-right, 60, 16, 1);
+  @include adaptiv-value(padding-left, 60, 16, 1);
+}
 

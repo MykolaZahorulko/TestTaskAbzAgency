@@ -1,13 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./src/main.scss">
+    <title>Test Task</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__body">
+                <a href="#" class="header__logo img">
+                    <img src="./src/assets/images/Logo.svg" alt="Logo TESTTASK">
+                </a>
+                <nav class="header__navigation">
+                    <a href="" class="header__navigation-button common-button">Users</a>
+                    <a href="" class="header__navigation-button common-button">Sign Up</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="test-assignment ibg">
+            <img src="./src/assets/images/first-view-bg.jpeg" alt="Background field and the sky">
+            <div class="test-assignment__container">
+                <div class="test-assignment__body">
+                    <h1 class="test-assignment__title title">Test assignment for front-end developer</h1>
+                    <p class="test-assignment__text">What defines a good front-end developer is one that has skilled knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be building web interfaces with accessibility in mind. They should also be excited to learn, as the world of Front-End Development keeps evolving.</p>
+                    <a href="#" class="test-assignment__button common-button">Sign Up</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
 </html>
