@@ -49,6 +49,7 @@ main { flex: 1 1 auto; }
 }
 
 .common-button {
+  cursor: pointer;
   background-color: #F1E160;
   min-width: rem(100);
   min-height: rem(34);
