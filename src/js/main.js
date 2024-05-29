@@ -1,6 +1,6 @@
 'use strict'
 import {ibg} from './utils/ibg.js'
-import {fetchData} from './api/fetch.js'
+import {fetchData} from './api/request.js'
 
 ibg()
 

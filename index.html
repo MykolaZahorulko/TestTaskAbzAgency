@@ -27,7 +27,10 @@
             <div class="test-assignment__container">
                 <div class="test-assignment__body">
                     <h1 class="test-assignment__title title">Test assignment for front-end developer</h1>
-                    <p class="test-assignment__text">What defines a good front-end developer is one that has skilled knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be building web interfaces with accessibility in mind. They should also be excited to learn, as the world of Front-End Development keeps evolving.</p>
+                    <p class="test-assignment__text">What defines a good front-end developer is one that has skilled
+                        knowledge of HTML, CSS, JS with a vast understanding of User design thinking as they'll be
+                        building web interfaces with accessibility in mind. They should also be excited to learn, as the
+                        world of Front-End Development keeps evolving.</p>
                     <a href="#" class="test-assignment__button common-button">Sign Up</a>
                 </div>
             </div>
@@ -38,6 +41,53 @@
                     <h2 class="get__title title">Working with GET request</h2>
                     <div class="get__content"></div>
                     <div class="get__button common-button">Show more</div>
+                </div>
+            </div>
+        </section>
+        <section class="post">
+            <div class="post__container">
+                <div class="post__body">
+                    <h2 class="post__title title">Working with POST request</h2>
+                    <form action="submit" class="post__form form">
+                        <div class="form__inputs">
+                            <input type="text" name="name" placeholder="Your name" class="form__input" tabindex="1">
+                            <input type="email" name="email" placeholder="Email" class="form__input" tabindex="2">
+                            <input type="tel" name="phone" placeholder="Phone" class="form__input" tabindex="3">
+                        </div>
+                        <div class="form__options">
+                        <div class="form__options-title">Select your position</div>
+                            <div class="form__options-item">
+                                <input id="frontend" type="radio" class="form__options-option" value="frontedDeveloper"
+                                       name="position" checked="checked" tabindex="4">
+                                <label for="frontend" class="form__options-label"><span>Frontend developer</span></label>
+                            </div>
+                            <div class="form__options-item">
+                                <input id="backend" type="radio" class="form__options-option" value="backendDeveloper"
+                                       name="position" tabindex="5">
+                                <label for="backend" class="form__options-label"><span>Backend developer</span></label>
+                            </div>
+                            <div class="form__options-item">
+                                <input id="designer" type="radio" class="form__options-option" value="designer"
+                                       name="position" tabindex="6">
+                                <label for="designer" class="form__options-label"><span>Designer</span></label>
+                            </div>
+                            <div class="form__options-item">
+                                <input id="qa" type="radio" class="form__options-option" value="qa" name="position" tabindex="7">
+                                <label for="qa" class="form__options-label"><span>QA</span></label>
+                            </div>
+                        </div>
+                        <div class="form__file file">
+                            <div class="file__item">
+                                <input id="forImage" accept=".jpg, .png, .gif, .tiff, .webp" type="file" name="image"
+                                       class="file__input" tabindex="8">
+                                <div class="file__fake-button">
+                                    <div class="upload">Upload</div>
+                                    <div class="upload upload-your-photo">Upload your photo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="form__button common-button" tabindex="9">Sign up</button>
+                    </form>
                 </div>
             </div>
         </section>

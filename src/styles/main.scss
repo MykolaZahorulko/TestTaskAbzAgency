@@ -117,6 +117,7 @@
             margin-bottom: rem(20);
             height: rem(70);
             width: rem(70);
+
             img {
               @include border-radius(50%);
             }
@@ -150,6 +151,188 @@
         max-width: rem(120);
         margin: 0 auto;
       }
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.post {
+  padding-bottom: rem(100);
+  &__container {
+    // стилі для контейнера поста
+  }
+
+  &__body {
+    // стилі для тіла поста
+  }
+
+  &__title {
+    color: #000;
+    margin-bottom: rem(50);
+  }
+}
+
+.form {
+  max-width: rem(380);
+  margin: 0 auto;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+  }
+
+  &__input {
+    @include transition(box-shadow, 0.3s, ease, 0s);
+    border: 1px solid #D0CFCF;
+    padding: rem(14) rem(16);
+    background-color: #F8F8F8;
+    @include border-radius(rem(4));
+    font-size: rem(16);
+
+    &:focus {
+      box-shadow: 2px 2px 5px 0px rgba(167, 167, 174, 1);
+    }
+
+    &::placeholder {
+      color: #7E7E7E;
+    }
+
+    &:last-child {
+      margin-bottom: rem(43);
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      margin-bottom: rem(11);
+    }
+
+    &-item {
+      max-height: rem(26);
+      margin-bottom: rem(7);
+
+      &:last-child {
+        margin-bottom: rem(47);
+      }
+    }
+
+    &-option {
+      display: none;
+
+      &:checked + .form__options-label:after {
+        @include scale(1);
+      }
+
+      &:checked + .form__options-label:before {
+        border: 1px solid #00BDD3;
+      }
+
+    }
+
+    &-label {
+      cursor: pointer;
+      display: inline-flex;
+      font-size: rem(16);
+      align-items: center;
+      position: relative;
+      white-space: nowrap;
+
+      &:before {
+        @include transition(transform, 0.3s, ease, 0s);
+        content: "";
+        flex: 0 0 rem(20);
+        height: rem(20);
+        background-color: #F8F8F8;
+        border: 1px solid #D0CFCF;
+        @include border-radius(50%);
+        margin-right: rem(12);
+      }
+
+      &:after {
+        @include transition(transform, 0.3s, ease, 0s);
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 5px;
+        width: rem(10);
+        height: rem(10);
+        background-color: #00BDD3;
+        @include border-radius(50%);
+        @include scale(0);
+      }
+    }
+  }
+
+  .file {
+    margin-bottom: rem(50);
+    @include transition(box-shadow, 0.3s, ease, 0s);
+    border-radius: rem(4);
+    &:hover {
+      box-shadow: 2px 2px 5px 0 rgba(167, 167, 174, 1);
+    }
+    @media (hover:hover) {
+      &:hover {
+        box-shadow: 2px 2px 5px 0 rgba(167, 167, 174, 1);
+      }
+    }
+
+    @media (hover:none) {
+      &:active {
+        box-shadow: 2px 2px 5px 0 rgba(167, 167, 174, 1);
+      }
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__input {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      font-size: 0;
+    }
+
+    &__fake-button {
+      display: flex;
+
+      .upload {
+        font-size: rem(16);
+        padding: rem(14) rem(15);
+        flex: 0 1 21.8%;
+        color: #000000;
+        border: 1px solid #000000;
+        border-radius: rem(4) rem(0) rem(0) rem(4);
+      }
+      .upload.upload-your-photo {
+        flex: 0 1 78.2%;
+        color: #7E7E7E;
+        border: 1px solid #D0CFCF;
+        border-left: 0;
+        border-radius: rem(0) rem(4) rem(4) rem(0);
+      }
+    }
+
+  }
+
+  &__button {
+    margin: 0 auto;
+    color: #ffffff;
+    background-color: #B4B4B4;
+    width: rem(100);
+    &:hover {
+      background-color: #B4B4B4;
+    }
+    &:active {
+      background-color: #B4B4B4;
     }
   }
 }
